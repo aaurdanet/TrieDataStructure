@@ -20,6 +20,7 @@ void insert(struct Trie **ppTrie, char *word) {
         int index = c - 'a';
         if (pCurrent->children[index] == NULL) {
             pCurrent->children[index] = calloc(1, sizeof(struct Trie));
+            pCurrent->children[index]->count = 0;
         }
         pCurrent = pCurrent->children[index];
         word++;
